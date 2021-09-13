@@ -1,0 +1,53 @@
+{% extends 'InfoApp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+
+
+{% block block1 %}
+    <title>Lecturer's information</title>
+{% endblock %}
+
+
+
+
+{% block block2 %}
+
+<h1>Search Lecturer by any one of following fields: </h1><br>
+
+<form method="post">
+    {% csrf_token %}
+
+
+   &nbsp; <input type="text" name="ln" placeholder="Lecturer Name">&nbsp; <input type="submit" value="search lecturer by Name" class="btn btn-light">
+
+</form>
+<br><br>
+
+
+
+<form method="post">
+    {% csrf_token %}
+
+  &nbsp; <input type="text" name="ls" placeholder=" Lecturer subject">&nbsp; <input type="submit" value="search lecturer by Subject" class="btn btn-light">
+
+</form>
+<br><br>
+
+
+
+
+<form method="post">
+    {% csrf_token %}
+
+   &nbsp;<input type="text" name="ld" placeholder="  Lecturer Department">&nbsp; <input type="submit" value="search lecturer by Department" class="btn btn-light">
+
+</form>
+
+
+<br><br>
+<h3 style="text-align:center"><a  href="{% url 'home' %}"><button class="btn btn-primary">Back</button></a></h3>
+
+{% endblock %}
+

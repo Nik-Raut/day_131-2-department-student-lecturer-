@@ -1,0 +1,35 @@
+{% extends 'InfoApp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+
+
+{% block block1 %}
+    <title>login page</title>
+{% endblock %}
+
+
+
+
+{% block block2 %}
+
+
+<form method="post">
+    {% csrf_token %}
+
+    Username:<input type="text" name="un"><br><br>
+    Password:<input type="password" name="ps"><br><br>
+
+
+    {% if messages %}
+            {% for msg in messages %}
+            {{ msg }}
+            {% endfor %}
+    {% endif %}
+
+
+    <input type="submit" value="Submit login form">
+
+</form>
+{% endblock %}

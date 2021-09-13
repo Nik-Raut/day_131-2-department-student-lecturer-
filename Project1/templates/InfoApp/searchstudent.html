@@ -1,0 +1,62 @@
+{% extends 'InfoApp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+
+
+{% block block1 %}
+    <title>students information</title>
+{% endblock %}
+
+
+
+
+{% block block2 %}
+
+<h1>Search Student by any one of following fields: </h1><br>
+
+<form method="post">
+    {% csrf_token %}
+
+
+   &nbsp;<input type="text" name="sn" placeholder=" Student Name">&nbsp;<input type="submit" value="search students by Name" class="btn btn-light">
+
+</form>
+<br><br>
+
+
+
+<form method="post">
+    {% csrf_token %}
+
+   &nbsp; <input type="number" name="srn" placeholder="Student Roll No">&nbsp;<input type="submit" value="search students by Roll NO" class="btn btn-light">
+
+</form>
+<br><br>
+
+
+
+
+<form method="post">
+    {% csrf_token %}
+
+   &nbsp; <input type="number" name="smk" placeholder="Student Marks">&nbsp;<input type="submit" value="search students by Marks" class="btn btn-light">
+
+</form>
+<br><br>
+
+
+
+
+<form method="post">
+    {% csrf_token %}
+
+  &nbsp;<input type="text" name="sdpt" placeholder="Student Department">&nbsp;<input type="submit" value="search students by Department" class="btn btn-light">
+
+</form>
+
+<br><br>
+<h3 style="text-align:center"><a href="{% url 'home' %}"><button class="btn btn-primary">Back</button></a></h3>
+{% endblock %}
+

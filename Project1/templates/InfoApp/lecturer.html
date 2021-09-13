@@ -1,0 +1,28 @@
+{% extends 'InfoApp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+
+{% block block1 %}
+    <title>lecturer page</title>
+    {% endblock %}
+
+
+
+
+
+
+{% block block2 %}
+
+
+<form method="post">
+    {% csrf_token %}
+
+    {{form|crispy}}
+
+
+    <input type="submit" value="Submit lecturer form">
+
+</form>
+{% endblock %}
